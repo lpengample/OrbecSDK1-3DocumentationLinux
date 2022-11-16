@@ -1,0 +1,5 @@
+Java API Reference
+============================================
+.. doxygennamespace:: com::orbbec::obsensor
+   :project: OrbbecSdk
+   :members:

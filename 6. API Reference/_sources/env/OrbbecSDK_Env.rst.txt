@@ -1,0 +1,193 @@
+Windows10
+=========
+
+Orbbec SDK
+兼容标准UVC协议，支持的硬件设备符合标准UVC规格，因此不需要安装额外的驱动程序。
+
+.. _1-验证设备状态:
+
+1. 验证设备状态
+---------------
+
+-  将设备连接到主机
+-  导航至“控制面板”->“设备管理器”
+-  浏览查找 Orbbec
+   设备，如下图所示，设备连接成功。(不同设备其通道数可能会有所不同, Data
+   Channel 也并非所有设备都有)。
+
+|image1.png|
+
+.. _2-配置opencvexamples依赖:
+
+2. 配置OpenCV（Examples依赖）
+-----------------------------
+
+数据渲染依赖第三方库OpenCV，这里以OpenCV
+4.3.0为例演示安装配置
+
+1）执行OpenCV安装文件，选择opencv要安装的目录，点击extract执行安装；\ |image2.png|\ 
+
+2）在系统的环境变量中添加OpenCV的路径，变量名输入OpenCV_DIR,注意字母的大小写，变量值为OpenCV安装目录的build文件夹路径；
+\ |image3.png|\ \ |image4.png|
+
+.. _3-生成你的第一个应用程序:
+
+3. 生成你的第一个应用程序
+-------------------------
+
+软件依赖：VisualStudio2019、cmake
+3.10及以上版本
+
+1）下载/获取我们的SDK软件包，存放位置假设为D盘根目录：“D:/V1.0.0”，目录结构如下所示：
+\ |Snipaste_2021-06-02_15-17-47.png|
+
+2）打开Cmake，将“Examples”文件夹设置为代码路径，“Examples”下的“build”文件夹设置为生成二进制文件的路径，如下图所示。如Examples下无build，需要新建该文件夹。
+\ |image5.png|
+
+3）点击“Configure”并选择对应的Visual Studio版本和平台版本后，点击“Finish”，如下所示：\ |image6.png|
+
+4）点击“Generate”，如下所示：\ |image7.png|\ 
+
+5）可以通过以下两种方式打开Sample工程
+
+方法一：通过cmake，点击“OpenProject”按钮，打开VisualStudio工程。\ |image8.png|\ 
+
+方法二：通过文件夹，Examples/build中的Visual
+Studio工程直接启动，如下图所示。\ |image9.png|\ 
+
+6）打开Examples工程界面如下所示：\ |image10.png|\ 
+
+7）选择你想要运行的工程，右键点击并将其“设置为启动项目”,在运行选项处选择release和64位版本\ |image11.png|\ |image12.png|\ 
+
+8）将设备连接到主机
+
+9）将bin目录下的dll文件拷贝至执行文件处，运行工程，结果如下所示，至此第一个Eaxmple就运行成功了。\ |57A2BBD3-069C-4719-9A28-847293F79092.png|\ \ |image13.png|
+
+Android
+=======
+
+.. _1-验证设备状态-1:
+
+1. 验证设备状态
+---------------
+
+1）准备一套P1开发板(A311D)，环境为Android9
+
+2）准备ADB工具并再PC本地上配置环境变量
+
+3）准备mirco
+usb数据线，用于A311D与PC机的连接，同时通过ADB工具可访问A311D系统作调试使用(识别A311D为免驱)，同时准备USB
+3.0
+Type-C数据线，连接A311D与Astra+相机。\ |image14.png|\ \ |image15.png|\ 
+
+4）以ASTRA+为例，判断A311D是否正常识别相机通过lsusb命令判断，
+VID：2bc5 PID：0532(彩色相机) VID：2bc5 PID：0636(深度相机)
+\ |image16.png|\ 如系统能正常识别到相机，在USB总线上会枚举到设备PID（如上图），表明A311D已识别到相机，可做后续操作。
+
+.. _2-aar文件导入:
+
+2. AAR文件导入
+--------------
+
+我们已经将对应文件封装成了aar文件，你可以直接导入工程中。
+
+1）将“obsensor_xxxx_release.aar”放到module下的libs目录；
+
+2）在module的build.gradle的dependencies添加本地依赖；
+
+3）点击AS的
+File --> Sync Project with Gradle
+Files，等待更新完成；\ |image17|\ 
+
+4）配置AndroidManifest.xml权限，SDK运行中需要监听USB设备和摄像头的权限，在AndroidManifest.xml静态申请，并在Java/kotlin运行时动态申请；
+
+5）在我们对应的Java文件中，"import
+com.orbbec.obsensor.*"，加入对应的代码，具体如下所示：\ |image18.png|\ 如果正常打印出对应SDK版本信息，说明SDK集成成功。
+
+.. _3-example工程导入:
+
+3. Example工程导入
+------------------
+
+除了aar文件以外，我们也提供了example工程，可以直接打开对应的Android工程进行查看及开发。
+
+.. _4-混淆配置:
+
+4. 混淆配置
+-----------
+
+如果项目配置Proguard，那么需要对OrbbecSDK的Java class进行keep；
+
++----------------------------------------------------------------------+
+| -keep class com.orbbec.obsensor.\ **-dontwarn                        |
+| com.orbbec.obsensor.**\ -keepclassmembers class                      |
+| com.orbbec.obsensor.*\* { \*;                                        |
+| }-keepclasseswithmembernames,includedescriptorclasses class \* {     |
+| native **;}                                                          |
++======================================================================+
++----------------------------------------------------------------------+
+
+Linux
+=====
+
+.. _1系统环境配置:
+
+1、系统环境配置
+---------------
+
+1)安装libudev库：sudo apt install libudev-dev
+
+2)安装libusb库：
+
+sudo apt
+
+install libusb-dev
+
+.. _2usb访问权限配置:
+
+2、USB访问权限配置
+------------------
+
+Linux系统默认对USB设备的直接访问需要root权限，可以通过rules配置文件解决。在OrbbecSDK发布的文件解压后，在根目录下会有一个“99-obsensor-libusb.rules”配置文件和“install.sh”安装脚本，通过sudo命令执行“install.sh”脚本，即可完成rules配置文件的安装。另外，如果“install.sh”安装脚本并没有执行权限，可通过改命令解决：“sudo
+chmod +x ./install.sh”。
+成功执行安装脚本后，再接入设备时生效（已接入的设备需要重新拔插）。\ |image19.png|
+
+.. _3验证设备状态:
+
+3、验证设备状态
+---------------
+
+1）环境准备：ubuntu18.04 x64 desktop
+
+2）以Astra+为例，使用USB 3.0
+Type-C数据线，用于与PC机连接。
+
+3）使用lsusb命令，查看是否PC系统有正确识别到相机\ |image20.png|\ 
+
+4）通过PID&VID来判断相机是否正常被识别VID：2bc5
+PID：0532(彩色相机)VID：2bc5 PID：0636(深度相机)
+
+.. _-:
+
+.. |image1.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622614415864-16a67f93-8008-424c-90bd-8c593ad9c968.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=825&id=u7e00e5de&margin=%5Bobject%20Object%5D&name=image.png&originHeight=825&originWidth=853&originalType=binary&ratio=1&rotation=0&showTitle=false&size=66404&status=done&style=none&taskId=u99a548f0-b0ef-47bf-b11e-f8e7026953c&title=&width=853
+.. |image2.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622687920037-d9431ab5-b9fb-4370-805c-c9bfe0bb0008.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=149&id=cfijQ&margin=%5Bobject%20Object%5D&name=image.png&originHeight=149&originWidth=482&originalType=binary&ratio=1&rotation=0&showTitle=false&size=6186&status=done&style=none&taskId=udd90d0b0-e17b-4d80-bebe-69e6daf96a1&title=&width=482
+.. |image3.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1623219012480-e181c3bb-e628-4215-b8c6-24d2ae91d7e3.png#clientId=u9edd64fe-dd32-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u4979f362&margin=%5Bobject%20Object%5D&name=image_%E5%89%AF%E6%9C%AC.png&originHeight=659&originWidth=618&originalType=binary&ratio=1&rotation=0&showTitle=false&size=29388&status=done&style=none&taskId=u082cfa24-d8b8-4cc0-871a-df1d0207c55&title=
+.. |image4.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622688008310-5e6d336c-9536-4cc6-ba7b-2731ce1dc328.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=174&id=FkfoS&margin=%5Bobject%20Object%5D&name=image.png&originHeight=183&originWidth=653&originalType=binary&ratio=1&rotation=0&showTitle=false&size=9510&status=done&style=none&taskId=u2b9397bd-7f09-4bef-848c-8ffec45238b&title=&width=619.5
+.. |Snipaste_2021-06-02_15-17-47.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622618280718-660e1315-e34c-4b07-9f61-b0e0ff10daec.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=101&id=u0ec0116a&margin=%5Bobject%20Object%5D&name=Snipaste_2021-06-02_15-17-47.png&originHeight=101&originWidth=266&originalType=binary&ratio=1&rotation=0&showTitle=false&size=8631&status=done&style=none&taskId=u14d4bbe5-ec6c-4b11-a039-67e530f52c4&title=&width=266
+.. |image5.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622619602039-b91e46bd-213a-41f1-aa49-c1e8a3ac594b.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=470&id=u701b44ad&margin=%5Bobject%20Object%5D&name=image.png&originHeight=470&originWidth=1114&originalType=binary&ratio=1&rotation=0&showTitle=false&size=73983&status=done&style=none&taskId=u890ebbbd-1762-440c-b812-766042768f9&title=&width=1114
+.. |image6.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622688160000-143ad9ab-364b-4132-9bb9-beab6ec3d1a2.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=373&id=mh4uJ&margin=%5Bobject%20Object%5D&name=image.png&originHeight=373&originWidth=503&originalType=binary&ratio=1&rotation=0&showTitle=false&size=14039&status=done&style=none&taskId=u030cd90a-a880-428d-844b-8a7a0f81478&title=&width=503
+.. |image7.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622713729796-668fabcf-4519-487d-a0b6-1098072f74db.png#clientId=u624f000e-15a1-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=666&id=u5a3f839f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=666&originWidth=1249&originalType=binary&ratio=1&rotation=0&showTitle=false&size=58445&status=done&style=none&taskId=ub761edad-28e7-461a-b2a5-42d9a754b8a&title=&width=1249
+.. |image8.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622713798139-e1eecfb5-8f95-41bc-84c4-24fa40c3e438.png#clientId=u624f000e-15a1-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=666&id=ub0b15264&margin=%5Bobject%20Object%5D&name=image.png&originHeight=666&originWidth=1249&originalType=binary&ratio=1&rotation=0&showTitle=false&size=59223&status=done&style=none&taskId=u3d22353b-53e2-4626-a762-a409df3401c&title=&width=1249
+.. |image9.png| image:: https://cdn.nlark.com/yuque/0/2021/png/12768372/1622688220665-3d6a9abc-9121-4d3d-acf6-78ad554037fa.png#clientId=ub178c7b9-c4e4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=314&id=o6ler&margin=%5Bobject%20Object%5D&name=image.png&originHeight=314&originWidth=614&originalType=binary&ratio=1&rotation=0&showTitle=false&size=32999&status=done&style=none&taskId=u90b061ea-09ac-44fc-9ccc-481a79b8f5f&title=&width=614
+.. |image10.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1632639782349-ab760f62-6953-45a8-8481-4dd86693125d.png#clientId=u6ef34df3-b9c0-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=1027&id=u1ac48c12&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1027&originWidth=1916&originalType=binary&ratio=1&rotation=0&showTitle=false&size=240243&status=done&style=none&taskId=uc3799e28-3920-415d-a600-46250d79ca5&title=&width=1916
+.. |image11.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1632641432063-af35ecbc-c874-4b5f-a9dc-1959319c4383.png#clientId=u6ef34df3-b9c0-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=939&id=uc71e66a1&margin=%5Bobject%20Object%5D&name=image.png&originHeight=939&originWidth=1001&originalType=binary&ratio=1&rotation=0&showTitle=false&size=132160&status=done&style=none&taskId=u6605460f-d40f-4873-a310-f07fedbf1be&title=&width=1001
+.. |image12.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1632641490819-28073f6a-2ee6-4c8e-acc0-3c713f9a3a7b.png#clientId=u6ef34df3-b9c0-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=73&id=u94600e54&margin=%5Bobject%20Object%5D&name=image.png&originHeight=73&originWidth=667&originalType=binary&ratio=1&rotation=0&showTitle=false&size=11338&status=done&style=none&taskId=u4211956b-7c28-443e-9f33-89eb9a36ac9&title=&width=667
+.. |57A2BBD3-069C-4719-9A28-847293F79092.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1638438800733-5b15f594-258a-4b71-bb8d-d7066987905b.png#clientId=u4b4c0801-16d4-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u3747a649&margin=%5Bobject%20Object%5D&name=57A2BBD3-069C-4719-9A28-847293F79092.png&originHeight=422&originWidth=554&originalType=binary&ratio=1&rotation=0&showTitle=false&size=136327&status=done&style=none&taskId=u24f1b867-bf0f-4a41-b265-053ba68b51c&title=
+.. |image13.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1632645081035-5ef2cb24-df6f-439a-9e9f-5eb242ed733e.png#clientId=u6ef34df3-b9c0-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=600&id=u17d07100&margin=%5Bobject%20Object%5D&name=image.png&originHeight=600&originWidth=1200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=87785&status=done&style=none&taskId=u18e9168a-0215-4915-844a-27f21058513&title=&width=1200
+.. |image14.png| image:: https://cdn.nlark.com/yuque/0/2021/png/916088/1622683914924-3db592dd-a356-4a4d-82d4-b54f323de080.png#clientId=u68fc55ef-1997-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=431&id=u13ca82d2&margin=%5Bobject%20Object%5D&name=image.png&originHeight=708&originWidth=760&originalType=binary&ratio=1&rotation=0&showTitle=false&size=117033&status=done&style=none&taskId=ua52d99bf-e193-4031-ba36-ec862d192c7&title=&width=463
+.. |image15.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1623210263726-7fa21edd-f014-4a48-94ea-fcff014ddf66.png#clientId=u791c590c-d435-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=147&id=u96d2d665&margin=%5Bobject%20Object%5D&name=image.png&originHeight=294&originWidth=1223&originalType=binary&ratio=2&rotation=0&showTitle=false&size=28788&status=done&style=none&taskId=ucae87583-a6b9-4974-9e05-fa927b38a2f&title=&width=611.5
+.. |image16.png| image:: https://cdn.nlark.com/yuque/0/2021/png/897878/1623209003650-2481ce84-ffda-4332-8af4-56c7c0e186c0.png#clientId=uad2132ce-b654-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=195&id=RYngC&margin=%5Bobject%20Object%5D&name=image.png&originHeight=390&originWidth=1219&originalType=binary&ratio=2&rotation=0&showTitle=false&size=200547&status=done&style=none&taskId=u9d3e2003-45fb-4271-a9e9-d6637640c70&title=&width=609.5
+.. |image17| image:: https://cdn.nlark.com/yuque/0/2022/png/26144385/1650348355136-2edb9b7f-8187-44da-a7fd-cae0bca24f00.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_18%2Ctext_T3JiYmVj%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10#crop=0&crop=0&crop=1&crop=1&from=url&id=cFYiB&margin=%5Bobject%20Object%5D&originHeight=692&originWidth=628&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=
+.. |image18.png| image:: https://cdn.nlark.com/yuque/0/2020/png/730326/1597752722722-0e823938-ea7f-4176-b776-928873745129.png#crop=0&crop=0&crop=1&crop=1&height=489&id=kj4ZH&margin=%5Bobject%20Object%5D&name=image.png&originHeight=489&originWidth=1110&originalType=binary&ratio=1&rotation=0&showTitle=false&size=41310&status=done&style=none&title=&width=1110
+.. |image19.png| image:: https://cdn.nlark.com/yuque/0/2022/png/2071688/1647832105726-ea5012f8-c5a4-4106-be3a-2bf346d948c5.png#clientId=ua9ba7c2b-0976-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=107&id=uc0075d19&margin=%5Bobject%20Object%5D&name=image.png&originHeight=134&originWidth=609&originalType=binary&ratio=1&rotation=0&showTitle=false&size=10919&status=done&style=none&taskId=u2c0d9dd2-df64-48aa-8f5f-3f2b63f3a6b&title=&width=487.2
+.. |image20.png| image:: https://cdn.nlark.com/yuque/0/2021/png/916088/1622719938282-fe0b6ecb-d58b-497d-990f-872efbf2a542.png#clientId=u4531a8a7-2d22-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=439&id=u4a9a6a9d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=498&originWidth=743&originalType=binary&ratio=1&rotation=0&showTitle=false&size=57330&status=done&style=none&taskId=u853c812a-9a11-4119-a313-c677536598e&title=&width=654.5

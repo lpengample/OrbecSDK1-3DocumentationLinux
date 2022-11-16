@@ -1,0 +1,9 @@
+API Reference
+=============
+This document is for OrbbecSDK API reference.
+
+.. toctree::
+
+   c_ref
+   cxx_ref
+   java_ref

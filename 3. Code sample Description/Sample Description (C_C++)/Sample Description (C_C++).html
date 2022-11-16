@@ -1,0 +1,2330 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
+  max-width: 980px;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.markdown-body diagram-div, .markdown-body div.uml-sequence-diagram, .markdown-body, div.uml-flowchart {
+  overflow: auto;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><style>/*GitHub*/
+.highlight {background-color:#fff;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>Sample Description (C_C++)</title></head><body><article class="markdown-body"><p>All examples can be found in the project&rsquo;s Examples directory</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Language</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HelloOrbbec</td>
+<td>C</td>
+<td>Demonstrate connect to device to get SDK version and device information</td>
+</tr>
+<tr>
+<td>SensorControl</td>
+<td>C</td>
+<td>Demonstrate the operation of device, sensor control commands</td>
+</tr>
+<tr>
+<td>Hotplugin</td>
+<td>C</td>
+<td>Demonstrate device hot-plug monitoring, automatically connect the device to open depth streaming when the device is online, and automatically disconnect the device when it detects that the device is offline</td>
+</tr>
+<tr>
+<td>PointCloud</td>
+<td>C</td>
+<td>Demonstrate the generation of depth point cloud or RGBD point cloud and save it as ply format file</td>
+</tr>
+<tr>
+<td>HelloOrbbec</td>
+<td>C++</td>
+<td>Demonstrate connect to device to get SDK version and device info</td>
+</tr>
+<tr>
+<td>DepthViewer</td>
+<td>C++</td>
+<td>Demonstrate using SDK to get depth data and draw display, get resolution and set, display depth image</td>
+</tr>
+<tr>
+<td>ColorViewer</td>
+<td>C++</td>
+<td>Demonstrate using SDK to get color data and draw display, get resolution and set, display color image</td>
+</tr>
+<tr>
+<td>InfraredViewer</td>
+<td>C++</td>
+<td>Demonstrate using SDK to obtain infrared data and draw display, obtain resolution and set, display infrared image</td>
+</tr>
+<tr>
+<td>SyncAlignViewer</td>
+<td>C++</td>
+<td>Demonstrate operations on sensor data stream alignment</td>
+</tr>
+<tr>
+<td>SensorControl</td>
+<td>C++</td>
+<td>Demonstrate manipulation of device and sensor control commands</td>
+</tr>
+<tr>
+<td>MultiDevice</td>
+<td>C++</td>
+<td>Demonstrate operation on multiple devices</td>
+</tr>
+<tr>
+<td>HotPlugin</td>
+<td>C++</td>
+<td>Demonstrate the settings of the device plug and unplug callback, and get the stream processed after plugging and unplugging</td>
+</tr>
+<tr>
+<td>IMUReader</td>
+<td>C++</td>
+<td>Get IMU data and output display</td>
+</tr>
+<tr>
+<td>PointCloud</td>
+<td>C++</td>
+<td>Demonstrate the generation of depth point cloud or RGBD point cloud and save it as ply format file</td>
+</tr>
+<tr>
+<td>SaveToDisk</td>
+<td>C++</td>
+<td>Get color and depth maps and save as png format</td>
+</tr>
+<tr>
+<td>Recorder</td>
+<td>C++</td>
+<td>Record current video stream to file</td>
+</tr>
+<tr>
+<td>Playback</td>
+<td>C++</td>
+<td>Load video files for playback</td>
+</tr>
+</tbody>
+</table>
+<h1 id="c">C<a class="headerlink" href="#c" title="Permanent link"></a></h1>
+<h2 id="helloorbbec">HelloOrbbec<a class="headerlink" href="#helloorbbec" title="Permanent link"></a></h2>
+<p>Function description: Demonstrate SDK initialization, get SDK version, get device model, get device serial number, get firmware version, and SDK release resources.</p>
+<blockquote>
+<p>This sample is based on C Low Level API for demonstration.</p>
+</blockquote>
+<p>First get and print the current SDK version
+<div class="highlight"><pre><span class="n">printf</span><span class="p">(</span><span class="s">&quot;SDK version: %d.%d.%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ob_get_major_version</span><span class="p">(),</span> <span class="n">ob_get_minor_version</span><span class="p">(),</span> <span class="n">ob_get_patch_version</span><span class="p">());</span>
+</pre></div>
+Create a Context to obtain a list of device information and create a device
+<div class="highlight"><pre>ob_error*   error = NULL;
+ob_context* ctx   = ob_create_context( &amp;error );
+</pre></div>
+Query the list of connected devices to obtain the number of devices in the list, and create the first device in the list through index number 0.
+<div class="highlight"><pre>ob_device_list* dev_list = ob_query_device_list( ctx, &amp;error );
+int count = ob_device_list_device_count(dev_list, &amp;error);
+ob_device* dev = ob_get_device(dev_list, 0, &amp;error);
+</pre></div>
+Next you can get information from this device.
+<div class="highlight"><pre>//Get device information
+ob_device_info* dev_info = ob_device_get_device_info(dev, &amp;error);
+
+//Get the device name
+const char* name = ob_device_info_name(dev_info, &amp;error);
+
+//Get the pid, vid, uid of the device
+int pid = ob_device_info_pid(dev_info, &amp;error);
+int vid = ob_device_info_vid(dev_info, &amp;error);
+int uid = ob_device_info_uid(dev_info, &amp;error);
+
+//Get the firmware version number of the device
+const char* fw_ver = ob_device_info_firmware_version(dev_info, &amp;error);
+
+//Get the serial number of the device
+const char* sn = ob_device_info_serial_number(dev_info, &amp;error);
+
+//Get the list of supported sensors
+ob_sensor_list* sensor_list = ob_device_get_sensor_list(dev, &amp;count, &amp;error);
+for(int i = 0; i &lt; count; i++)
+{
+    ob_sensor_type sensor_type = ob_sensor_list_get_sensor_type(sensor_list， i, &amp;error);
+    switch (sensor_type)
+    {
+      case OB_SENSOR_COLOR:
+            break;
+        case OB_SENSOR_DEPTH:
+            break;
+        case OB_SENSOR_IR:
+            break;
+    }
+}
+</pre></div>
+Release resources and exit the program.
+<div class="highlight"><pre><span class="n">ob_delete_sensor_list</span><span class="p">(</span><span class="n">sensor_list</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span> <span class="c1">//Destroy sensor list</span>
+<span class="n">ob_delete_device_info</span><span class="p">(</span><span class="n">dev_info</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span> <span class="c1">//Destroy device info</span>
+<span class="n">ob_delete_device</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span> <span class="c1">//Destroy device</span>
+<span class="n">ob_delete_device_list</span><span class="p">(</span><span class="n">dev_list</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span> <span class="c1">//Destroy device list</span>
+<span class="n">ob_delete_context</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span> <span class="c1">//Destroy context</span>
+</pre></div></p>
+<h2 id="sensorcontrol">SensorControl<a class="headerlink" href="#sensorcontrol" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the operation of device control commands, the operation of sensor control commands, and stream from sensor.</p>
+<blockquote>
+<p>This example is based on C Low Level API for demonstration.</p>
+</blockquote>
+<p>Create a Context and query the list of connected devices
+<div class="highlight"><pre><span class="n">ob_error</span><span class="o">*</span>   <span class="n">error</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="n">ob_context</span><span class="o">*</span> <span class="n">ctx</span>   <span class="o">=</span> <span class="n">ob_create_context</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">error</span> <span class="p">);</span>
+<span class="n">ob_device_list</span><span class="o">*</span> <span class="n">dev_list</span> <span class="o">=</span> <span class="n">ob_query_device_list</span><span class="p">(</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span> <span class="p">);</span>
+</pre></div>
+Print device information in the list by index number
+<div class="highlight"><pre><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="n">ob_device_list_get_device_name</span><span class="p">(</span><span class="n">device_list</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">ob_device_list_get_device_pid</span><span class="p">(</span><span class="n">device_list</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">vid</span> <span class="o">=</span> <span class="n">ob_device_list_get_device_vid</span><span class="p">(</span><span class="n">device_list</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">uid</span> <span class="o">=</span> <span class="n">ob_device_list_get_device_uid</span><span class="p">(</span><span class="n">device_list</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sn</span> <span class="o">=</span> <span class="n">ob_device_list_get_device_serial_number</span><span class="p">(</span><span class="n">device_list</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d. name: %s, pid: %d, vid: %d, uid: %s, sn: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">vid</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">sn</span><span class="p">);</span>
+</pre></div>
+Create a device
+<div class="highlight"><pre><span class="k">if</span><span class="p">(</span><span class="n">devCount</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// If a single device is inserted, the first one is selected by default.</span>
+     <span class="n">device</span> <span class="o">=</span> <span class="n">ob_device_list_get_device</span><span class="p">(</span><span class="n">dev_list</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// If there are multiple devices, the user inputs the selection.</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">select_device</span><span class="p">(</span><span class="n">dev_list</span><span class="p">);</span>  <span class="c1">// select_device </span>
+<span class="p">}</span>
+</pre></div>
+Get and print the currently created device information
+<div class="highlight"><pre> <span class="n">ob_device_info</span> <span class="o">*</span><span class="n">deviceInfo</span> <span class="o">=</span> <span class="n">ob_device_get_device_info</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+ <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="n">ob_device_info_name</span><span class="p">(</span><span class="n">deviceInfo</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+ <span class="kt">int</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">ob_device_info_pid</span><span class="p">(</span><span class="n">deviceInfo</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+ <span class="kt">int</span> <span class="n">vid</span> <span class="o">=</span> <span class="n">ob_device_info_vid</span><span class="p">(</span><span class="n">deviceInfo</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+ <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">uid</span> <span class="o">=</span> <span class="n">ob_device_info_uid</span><span class="p">(</span><span class="n">deviceInfo</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+ <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Current Device: name: %s, pid: %d, vid: %d, uid: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">vid</span><span class="p">,</span> <span class="n">uid</span><span class="p">);</span>
+</pre></div>
+Get supported control command properties
+<div class="highlight"><pre><span class="c1">// Get the number of attributes supporting control commands</span>
+<span class="kt">uint32_t</span> <span class="n">propertySize</span> <span class="o">=</span> <span class="n">ob_device_get_supported_property_count</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="c1">// Get the control command attribute item through index number I</span>
+<span class="n">ob_property_item</span> <span class="n">property_item</span> <span class="o">=</span> <span class="n">ob_device_get_supported_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+</pre></div>
+read/write control commands
+<div class="highlight"><pre><span class="c1">// Read</span>
+<span class="n">bool_ret</span> <span class="o">=</span> <span class="n">ob_device_get_bool_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span><span class="c1">// bool property </span>
+<span class="n">int_ret</span> <span class="o">=</span> <span class="n">ob_device_get_int_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span><span class="o">/</span> <span class="kt">int</span> <span class="n">property</span>
+<span class="n">float_ret</span> <span class="o">=</span> <span class="n">ob_device_get_float_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span><span class="c1">// float property</span>
+
+<span class="c1">// Read the value range, default value, step value and other information of the command.</span>
+<span class="n">ob_int_property_range</span>   <span class="n">int_range</span><span class="p">;</span>
+<span class="n">ob_float_property_range</span> <span class="n">float_range</span><span class="p">;</span>
+<span class="n">ob_bool_property_range</span>  <span class="n">bool_range</span><span class="p">;</span>
+<span class="n">sprintf</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="s">&quot;Bool value(min:0, max:1, step:1)&quot;</span><span class="p">);</span> 
+<span class="n">int_range</span> <span class="o">=</span> <span class="n">ob_device_get_int_property_range</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span> 
+<span class="n">float_range</span> <span class="o">=</span> <span class="n">ob_device_get_float_property_range</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span> 
+
+<span class="c1">// Write</span>
+<span class="n">ob_device_set_bool_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">bool_value</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span> <span class="c1">// bool property</span>
+<span class="n">ob_device_set_int_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">int_value</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span> <span class="c1">// int property</span>
+<span class="n">ob_device_set_float_property</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">property_item</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">float_value</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span> <span class="c1">// float property</span>
+</pre></div>
+Finally, when the program exits, the corresponding created resources need to be released.
+<div class="highlight"><pre><span class="c1">//Delete context</span>
+<span class="n">ob_delete_context</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+<span class="c1">//Delete device list</span>
+<span class="n">ob_delete_device_list</span><span class="p">(</span><span class="n">dev_list</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>        
+<span class="c1">//Delete device</span>
+<span class="n">ob_delete_device</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">g_error</span><span class="p">);</span>
+</pre></div></p>
+<h2 id="colordepthviewer">ColorDepthViewer<a class="headerlink" href="#colordepthviewer" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the use of the pipeline advanced interface to operate the device, obtain the resolution list and set the resolution.</p>
+<blockquote>
+<p>This example is based on C High Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a PipeLine to open the Color and Depth streams after connecting the device.
+<div class="highlight"><pre>pipe = ob_create_pipeline( &amp;error );
+</pre></div>
+Create a Config to configure the resolution, frame rate and format of Color or Depth streams.
+<div class="highlight"><pre>ob_config* config = ob_create_config( &amp;error );
+</pre></div>
+Configure stream
+<div class="highlight"><pre><span class="c1">// 2.1 Configure depth stream</span>
+<span class="n">ob_stream_profile</span> <span class="o">*</span>     <span class="n">depth_profile</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="n">ob_stream_profile_list</span> <span class="o">*</span><span class="n">profiles</span>      <span class="o">=</span> <span class="n">ob_pipeline_get_stream_profile_list</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">OB_SENSOR_DEPTH</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="c1">//Find the corresponding Profile according to the specified format.</span>
+<span class="n">depth_profile</span> <span class="o">=</span> <span class="n">ob_stream_profile_list_get_video_stream_profile</span><span class="p">(</span><span class="n">profiles</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">OB_FORMAT_Y16</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">depth_profile</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// If the specified format profile is not found, the first profile in the profile list is used.</span>
+     <span class="n">depth_profile</span> <span class="o">=</span> <span class="n">ob_stream_profile_list_get_profile</span><span class="p">(</span><span class="n">profiles</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">ob_config_enable_stream</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">depth_profile</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>  <span class="c1">// Enable stream</span>
+
+<span class="c1">// 2.2 Configure color stream</span>
+<span class="n">ob_stream_profile</span> <span class="o">*</span><span class="n">color_profile</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="n">profiles</span>                         <span class="o">=</span> <span class="n">ob_pipeline_get_stream_profile_list</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">OB_SENSOR_COLOR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="c1">//Find the corresponding Profile according to the specified format.</span>
+<span class="n">color_profile</span> <span class="o">=</span> <span class="n">ob_stream_profile_list_get_video_stream_profile</span><span class="p">(</span><span class="n">profiles</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">OB_FORMAT_MJPG</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">color_profile</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// If the specified format profile is not found, the first profile in the profile list is used.</span>
+    <span class="n">color_profile</span> <span class="o">=</span> <span class="n">ob_stream_profile_list_get_profile</span><span class="p">(</span><span class="n">profiles</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">ob_config_enable_stream</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">color_profile</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>  <span class="c1">// Enable stream</span>
+</pre></div>
+Turn off sync
+<div class="highlight"><pre>ob_pipeline_disable_frame_sync(pipe, &amp;error);  // Turn off frame synchronization
+</pre></div>
+Start the pipeline through config
+<div class="highlight"><pre>ob_pipeline_start_with_config(pipe, config, &amp;error);
+</pre></div>
+Stop and destroy
+<div class="highlight"><pre>// Stop pipeline
+ob_pipeline_stop(pipe, &amp;error); 
+
+// Destroy pipeline  
+ob_delete_pipeline(pipe, &amp;error);
+</pre></div></p>
+<h2 id="hotplugin">HotPlugin<a class="headerlink" href="#hotplugin" title="Permanent link"></a></h2>
+<p>Function description: Monitor device hot-plug, if the device is online, then automatically connects to the device to open the depth stream, or if the device is offline and then automatically disconnects the device.</p>
+<blockquote>
+<p>This sample is based on C Low Level API for registering device up/down callback, and based on High Level API for open stream fetching demo.</p>
+</blockquote>
+<p>Create a device connection processing function, create a pipeline in the function and call create_and_start_with_config to start RGB and Depth streams.
+<div class="highlight"><pre>//Device connection processing
+void device_connect_callback( ob_device_list* connectList ) {
+    uint32_t count = ob_device_list_device_count( connectList, &amp;error );
+    check_error( error );
+    printf( &quot;Device connect: %d\n&quot;, count );
+    if ( count &gt; 0 ) {
+        if ( pipeline == NULL ) {
+            pipeline = ob_create_pipeline( &amp;error );
+            check_error( error );
+            create_and_start_with_config();
+        }
+    }
+}
+</pre></div>
+Create a device disconnection processing function, stop the pipeline in the function, and set the exit pipeline flag isExit as true.
+<div class="highlight"><pre>//Device disconnection processing
+void device_disconnect_callback( ob_device_list* disconnectList ) {
+    uint32_t count = ob_device_list_device_count( disconnectList, &amp;error );
+    check_error( error );
+    printf( &quot;Device disconnect: %d\n&quot;, count );
+    if ( count &gt; 0 ) {
+        ob_pipeline_stop( pipeline, &amp;error );
+        check_error( error );
+        isExit = true;
+    }
+}
+</pre></div>
+The device connection and disconnection processing function will be called within the device up/down callback function.
+<div class="highlight"><pre>//Device status change callback
+void on_device_changed_callback( ob_device_list* removed, ob_device_list* added, void* pCallback ) {
+    device_disconnect_callback( removed );
+    device_connect_callback( added );
+}
+</pre></div>
+In the main function, first we need to create a Context and set the device up/down callback
+<div class="highlight"><pre>//Creat context
+ob_context* ctx = ob_create_context( &amp;error );  
+
+//Set device callback 
+ob_set_device_changed_callback( ctx, on_device_changed_callback, NULL, &amp;error );
+</pre></div>
+The main task of the main loop is to obtain the data of frame from the pipeline when the pipeline is created and started after the device connected, and print out the Color and Depth information from the data frame. 
+<div class="highlight"><pre>//Waiting for a frame of data, the timeout period is 100ms
+ob_frame* frameset = ob_pipeline_wait_for_frames( pipeline, 100, &amp;error );
+if ( frameset ) {
+    //Get the depth data frame
+    ob_frame* depth_frame = ob_frame_set_depth_frame( frameset, &amp;error );
+    if ( depth_frame ) {
+        printf( &quot;=====Depth Frame Info======Index: %lld TimeStamp: %lld\n&quot;, ob_frame_index( depth_frame, &amp;error ), ob_frame_time_stamp( depth_frame, &amp;error ) );
+        //Release the depth data frame
+        ob_delete_frame( depth_frame, &amp;error ); 
+    }
+    //Get the Color data frame
+    ob_frame* color_frame = ob_frame_set_color_frame( frameset, &amp;error );
+    if ( color_frame ) {
+        printf( &quot;=====Color Frame Info======Index: %lld TimeStamp: %lld\n&quot;, ob_frame_index( color_frame, &amp;error ), ob_frame_time_stamp( color_frame, &amp;error ) );
+        //Release the Color data frame
+        ob_delete_frame( color_frame, &amp;error );
+    }
+    //Release frameSet
+    ob_delete_frame( frameset, &amp;error );
+}
+</pre></div>
+After exiting the main loop, relevant resources need to be released.
+<div class="highlight"><pre>    if ( pipeline ) {
+        //Stop pipeline
+        ob_pipeline_stop( pipeline, &amp;error );
+        //Delete pipeline
+        ob_delete_pipeline( pipeline, &amp;error );
+    }
+    // Delete dev_list
+    if ( dev_list ) {
+        ob_delete_device_list( dev_list, &amp;error );
+    }
+    // Delete ctx
+    if ( ctx ) {
+        ob_delete_context( ctx, &amp;error );
+    }
+</pre></div></p>
+<h2 id="pointcloud">PointCloud<a class="headerlink" href="#pointcloud" title="Permanent link"></a></h2>
+<p>Function description: Connect the device to open the stream, generate depth point cloud or RGBD point cloud and save it as ply format file.</p>
+<blockquote>
+<p>This sample is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>Create a point cloud and save it as a ply format file function. The detailed description of the ply file format can be viewed on the Internet.
+<div class="highlight"><pre>//Save point cloud data to ply
+void save_points_to_ply( ob_frame* frame, const char* fileName ) {
+    int pointsSize = ob_frame_data_size( frame, &amp;error ) / sizeof( ob_point );
+    check_error( error );
+
+    FILE* fp = fopen( fileName, &quot;wb+&quot; );
+    fprintf( fp, &quot;ply\n&quot; );
+    fprintf( fp, &quot;format ascii 1.0\n&quot; );
+    fprintf( fp, &quot;element vertex %d\n&quot;, pointsSize );
+    fprintf( fp, &quot;property float x\n&quot; );
+    fprintf( fp, &quot;property float y\n&quot; );
+    fprintf( fp, &quot;property float z\n&quot; );
+    fprintf( fp, &quot;end_header\n&quot; );
+
+    ob_point* point = ( ob_point* )ob_frame_data( frame, &amp;error );
+    check_error( error );
+    for ( int i = 0; i &lt; pointsSize; i++ ) {
+        fprintf( fp, &quot;%.3f %.3f %.3f\n&quot;, point-&gt;x, point-&gt;y, point-&gt;z );
+        point++;
+    }
+
+    fflush( fp );
+    fclose( fp );
+}
+
+//Save color point cloud data to ply
+void save_rgb_points_to_ply( ob_frame* frame, const char* fileName ) {
+    int pointsSize = ob_frame_data_size( frame, &amp;error ) / sizeof( ob_color_point );
+    check_error( error );
+
+    FILE* fp = fopen( fileName, &quot;wb+&quot; );
+    fprintf( fp, &quot;ply\n&quot; );
+    fprintf( fp, &quot;format ascii 1.0\n&quot; );
+    fprintf( fp, &quot;element vertex %d\n&quot;, pointsSize );
+    fprintf( fp, &quot;property float x\n&quot; );
+    fprintf( fp, &quot;property float y\n&quot; );
+    fprintf( fp, &quot;property float z\n&quot; );
+    fprintf( fp, &quot;property uchar red\n&quot; );
+    fprintf( fp, &quot;property uchar green\n&quot; );
+    fprintf( fp, &quot;property uchar blue\n&quot; );
+    fprintf( fp, &quot;end_header\n&quot; );
+
+    ob_color_point* point = ( ob_color_point* )ob_frame_data( frame, &amp;error );
+    check_error( error );
+
+    for ( int i = 0; i &lt; pointsSize; i++ ) {
+        fprintf( fp, &quot;%.3f %.3f %.3f %d %d %d\n&quot;, point-&gt;x, point-&gt;y, point-&gt;z, ( int )point-&gt;r, ( int )point-&gt;g, ( int )point-&gt;b );
+        point++;
+    }
+
+    fflush( fp );
+    fclose( fp );
+}
+</pre></div>
+Create pipeline and stream profile
+<div class="highlight"><pre>    //Create a PipeLine to open the Color and Depth streams after connecting the device
+    pipeline = ob_create_pipeline( &amp;error );
+    //Create Config to configure the resolution, frame rate and format of Color and Depth streams
+    ob_config* config = ob_create_config( &amp;error );
+
+    //Configure depth stream
+    ob_stream_profile*  depth_profile = NULL;
+    ob_stream_profile** profiles      = ob_pipeline_get_stream_profiles( pipeline, OB_SENSOR_DEPTH, &amp;depth_profile_count, &amp;error );
+    //Find the corresponding Profile according to the specified format
+    depth_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_Y16, 30, &amp;error);
+    ob_config_enable_stream(config, depth_profile, &amp;error);  // Enable configuration
+
+    //Configure color stream
+    ob_stream_profile *color_profile = NULL;
+    profiles                         = ob_pipeline_get_stream_profile_list(pipeline, OB_SENSOR_COLOR, &amp;error);
+    //Find the corresponding Profile according to the specified format
+    color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_YUYV, 0, &amp;error);
+    //If YUYV is not found, look for I420 format
+    if(!color_profile) {  
+        color_profile = ob_stream_profile_list_get_video_stream_profile(profiles, 640, 480, OB_FORMAT_I420, 0, &amp;error);
+        check_error(error);
+    }
+    ob_config_enable_stream( config, color_profile, &amp;error );  // Enable configuration
+</pre></div>
+Get device information pipeline to enable the D2C function of the device.
+<div class="highlight"><pre>   //Get device handle
+   ob_device* device = ob_pipeline_get_device( pipeline, &amp;error );
+   // Enable D2C alignment, required for RGBD point cloud generation.
+    if ( device &amp;&amp; ob_device_is_property_supported( device, OB_DEVICE_PROPERTY_DEPTH_ALIGN_HARDWARE_BOOL, &amp;error ) ) {
+       // Turn on hardware D2c alignment 
+       ob_device_set_bool_property( device, OB_DEVICE_PROPERTY_DEPTH_ALIGN_HARDWARE_BOOL, true, &amp;error );
+    }
+</pre></div>
+Open the stream, and create a point cloud filter for converting the depth and color frame data into point cloud data. The point cloud filter is created after opening the stream to allow the SDK to automatically set the camera parameters according to the current stream configuration. You can also set it yourself.
+<div class="highlight"><pre>// Create a point cloud filter object (when the point cloud filter is created, the device parameters will be obtained inside the Pipeline, so try to configure the device before the filter is created)
+     ob_filter* point_cloud = ob_pipeline_create_pointcloud_filter( pipeline, &amp;error );
+// Set filter parameters by yourself
+     if (device &amp;&amp; ob_device_is_property_supported( device, OB_DATA_TYPE_CAMERA_PARA, &amp;error)) {
+         CAMERA_PARA cameraParam = {0};
+         uint32_t len;
+         ob_device_get_structured_data( device, OB_DATA_TYPE_CAMERA_PARA, &amp;cameraParam,&amp;len, &amp;error );
+         ob_pointcloud_filter_set_camera_parameter(point_cloud,cameraParam,error);
+     }
+</pre></div>
+Start the main loop, call the point cloud filter according to the user&rsquo;s key in the loop to generate depth point cloud or RGBD point cloud data, and save it as a ply file.
+<div class="highlight"><pre>//Waiting for a frame of data, the timeout period is 100ms.
+ob_frame* frameset = ob_pipeline_wait_for_frames( pipeline, 100, &amp;error );
+if ( frameset != NULL ) 
+{
+    //Press R to save ply data
+    if ( ( key == &#39;R&#39; || key == &#39;r&#39; ) &amp;&amp; frameset != NULL ) {
+        ob_pointcloud_filter_set_point_format( point_cloud, OB_FORMAT_RGB_POINT, &amp;error );
+        ob_filter_process( point_cloud, frameset, &amp;error );
+        ob_frame* pointsFrame = ob_frame_set_points_frame( frameset, &amp;error );
+        save_rgb_points_to_ply( pointsFrame, &quot;rgb_points.ply&quot; );
+        ob_delete_frame( pointsFrame, &amp;error );
+    }
+    else if ( ( key == &#39;D&#39; || key == &#39;d&#39; ) &amp;&amp; frameset != NULL ) {
+        //Generate and save pointcloud
+        ob_pointcloud_filter_set_point_format( point_cloud, OB_FORMAT_POINT, &amp;error );
+        ob_filter_process( point_cloud, frameset, &amp;error );
+        ob_frame* pointsFrame = ob_frame_set_points_frame( frameset, &amp;error );
+        save_points_to_ply( pointsFrame, &quot;points.ply&quot; );
+        ob_delete_frame( pointsFrame, &amp;error );
+    }
+    ob_delete_frame( frameset, &amp;error );  // Delete frameSet  Reclaim memory
+}
+</pre></div>
+After the main loop exits, stop the stream and release the resources.
+<div class="highlight"><pre>    // Stop pipeline
+    ob_pipeline_stop( pipeline, &amp;error );
+
+    // Delete pipeline
+    ob_delete_pipeline( pipeline, &amp;error );
+
+    ob_delete_context( ctx, &amp;error );
+</pre></div></p>
+<h1 id="c_1">C++<a class="headerlink" href="#c_1" title="Permanent link"></a></h1>
+<h2 id="helloorbbec_1">HelloOrbbec<a class="headerlink" href="#helloorbbec_1" title="Permanent link"></a></h2>
+<p>Function description: Demonstrate SDK initialization, get SDK version, get device model, get device serial number, get firmware version, and SDK release resources.</p>
+<blockquote>
+<p>This example is based on C++ Low Level API for demonstration.</p>
+</blockquote>
+<p>Get SDK version. The SDK version number is divided into major version number, minor version number and revision number.
+<div class="highlight"><pre>std::cout &lt;&lt; &quot;SDK version: &quot; &lt;&lt; ob::Version::getMajor() &lt;&lt; &quot;.&quot; &lt;&lt; ob::Version::getMinor() &lt;&lt; &quot;.&quot; &lt;&lt; ob::Version::getPatch() &lt;&lt; std::endl;
+</pre></div>
+First, we need to create a Context to obtain a list of device information and create a device.
+<div class="highlight"><pre>ob::Context ctx;
+</pre></div>
+Get the list of connected devices
+<div class="highlight"><pre>auto devList = ctx.queryDeviceList();
+
+//Get the number of connected devices
+devList-&gt;deviceCount()
+</pre></div>
+Create device
+<div class="highlight"><pre>//Create a device, 0 means the index of the first device
+auto dev = devList-&gt;getDevice(0);
+</pre></div>
+Next we can get the information of this device: device information, device name, get device pid, vid, uid, device firmware version, device serial number.
+<div class="highlight"><pre>//Get device information
+auto devInfo = dev-&gt;getDeviceInfo();
+
+//Get the device name
+std::cout &lt;&lt; &quot;Device name: &quot; &lt;&lt; devInfo-&gt;name() &lt;&lt; std::endl;
+
+//Get the pid, vid, uid of the device
+std::cout &lt;&lt; &quot;Device pid: &quot; &lt;&lt; devInfo-&gt;pid() &lt;&lt; &quot; vid: &quot; &lt;&lt; devInfo-&gt;vid() &lt;&lt; &quot; uid: &quot; &lt;&lt; devInfo-&gt;uid() &lt;&lt; std::endl;
+
+//Get the fireware version number of the device 
+auto fwVer = devInfo-&gt;firmwareVersion();
+std::cout &lt;&lt; &quot;Firmware version: &quot; &lt;&lt; fwVer &lt;&lt; std::endl;
+
+//Get the serial number of the device
+auto sn = devInfo-&gt;serialNumber();
+std::cout &lt;&lt; &quot;Serial number: &quot; &lt;&lt; sn &lt;&lt; std::endl;
+</pre></div>
+Get the list of supported sensors
+<div class="highlight"><pre>// Get a list of supported sensors
+std::cout &lt;&lt; &quot;Sensor types: &quot; &lt;&lt; std::endl;
+auto sensorList = dev-&gt;getSensorList();
+for(uint32_t i = 0; i &lt; sensorList-&gt;count(); i++) {
+    auto sensor = sensorList-&gt;getSensor(i);
+    switch(sensor-&gt;type()) {
+    case OB_SENSOR_COLOR:
+        std::cout &lt;&lt; &quot;\tColor sensor&quot; &lt;&lt; std::endl;
+        break;
+    case OB_SENSOR_DEPTH:
+        std::cout &lt;&lt; &quot;\tDepth sensor&quot; &lt;&lt; std::endl;
+        break;
+    case OB_SENSOR_IR:
+        std::cout &lt;&lt; &quot;\tIR sensor&quot; &lt;&lt; std::endl;
+        break;
+    case OB_SENSOR_GYRO:
+        std::cout &lt;&lt; &quot;\tGyro sensor&quot; &lt;&lt; std::endl;
+        break;
+    case OB_SENSOR_ACCEL:
+        std::cout &lt;&lt; &quot;\tAccel sensor&quot; &lt;&lt; std::endl;
+        break;
+    default:
+        break;
+    }
+}
+</pre></div>
+The console result output is as follows:<img alt="1" src="/home/lisapeng/Documents/Orbbec%20SDK%201.3%20Documentation/3.%20Code%20sample%20Description/Sample%20Description%20%28C_C%2B%2B%29/Orbbec%20SDK%20Sample%20Description%20%28CC%2B%2B%29img/1.png" /></p>
+<h2 id="depthviewer">DepthViewer<a class="headerlink" href="#depthviewer" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the use of SDK to obtain depth data, set resolution and select to set, display depth image, and finally exit by ESC key.</p>
+<blockquote>
+<p>This example is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre>ob::Pipeline pipe;
+</pre></div>
+Get all stream profile list of the depth camera, including stream resolution, frame rate, and frame format.
+<div class="highlight"><pre>auto profiles = pipe.getStreamProfileList(OB_SENSOR_DEPTH);
+
+// Get the frame format to be used by traversing the profile of the depth stream. The Y16 format will be used here to open the stream.
+std::shared_ptr&lt;ob::StreamProfile&gt; depthProfile;
+    for (int i = 0; i &lt; profiles-&gt;count(); i++)
+    {   
+        auto profile = profiles-&gt;getProfile(i);
+        if(profile-&gt;format() == OB_FORMAT_Y16){
+            depthProfile = profile;
+            break;
+        }
+    }
+
+// You can also set the item of interest to return the first Profile in the corresponding Profile list
+// auto depthProfile = profiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
+
+// If no suitable flow configuration is found, open the first configuration in the list
+if(!depthProfile) {
+    depthProfile = profiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+By creating Config to configure which streams to be enabled or disabled by Pipeline, depth stream will be enabled here.
+<div class="highlight"><pre>std::shared_ptr&lt;ob::Config&gt; config = std::make_shared&lt;ob::Config&gt;();
+config-&gt;enableStream(depthProfile);
+</pre></div>
+Start the stream profile in Config, if no parameters are set, the default configuration startup stream will be started.
+<div class="highlight"><pre>pipe.start(config);
+</pre></div>
+To set the mirror mode, first determine whether the device has readable and writable permissions, and then set
+<div class="highlight"><pre><span class="c1">// Gets whether the image attribute has writable permission</span>
+<span class="k">if</span><span class="p">(</span><span class="n">pipe</span><span class="p">.</span><span class="n">getDevice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">isPropertySupported</span><span class="p">(</span><span class="n">OB_PROP_DEPTH_MIRROR_BOOL</span><span class="p">,</span> <span class="n">OB_PERMISSION_WRITE</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">//Set mirror</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="n">getDevice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">setBoolProperty</span><span class="p">(</span><span class="n">OB_PROP_DEPTH_MIRROR_BOOL</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+Waiting for a frame of data in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time.
+<div class="highlight"><pre>auto frameSet = pipe.waitForFrames(100);    //Set the waiting time to 100ms
+</pre></div>
+Stop Pipeline, no more frame data will be generated.
+<div class="highlight"><pre>pipe.stop();
+</pre></div>
+The final depth map is shown below.<br /><img alt="2" src="/home/lisapeng/Documents/Orbbec%20SDK%201.3%20Documentation/3.%20Code%20sample%20Description/Sample%20Description%20%28C_C%2B%2B%29/Orbbec%20SDK%20Sample%20Description%20%28CC%2B%2B%29img/2.png" /><br />Resources will be automatically released after the program exits normally.</p>
+<h2 id="colorviewer">ColorViewer<a class="headerlink" href="#colorviewer" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the use of SDK to obtain color data, set resolution, display color image, and exit by ESC key.</p>
+<blockquote>
+<p>This example is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre>ob::Pipeline pipe;
+</pre></div>
+Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format.
+<div class="highlight"><pre>auto profiles = pipe.getStreamProfiles(OB_SENSOR_COLOR);
+
+//Get the frame format to be used by traversing the profile of the color stream. The MJPG format will be used here to open the stream.
+std::shared_ptr&lt; ob::StreamProfile &gt; colorProfile;
+for (int i = 0; i &lt; profiles-&gt;count(); i++) {
+    auto profile = profiles-&gt;getProfile(i);
+    if (profile-&gt;format() == OB_FORMAT_MJPG) {
+        colorProfile = profile;
+        break;
+    }
+}
+
+// You can also set the item of interest through the interface to return the first Profile in the corresponding Profile list
+// auto colorProfile = profiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_MJPG);
+
+//If no suitable flow configuration is found, open the first configuration in the list
+if(!colorProfile) {
+    colorProfile = profiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+By creating Config to configure which streams to be enabled or disabled by Pipeline, color stream will be enabled here.
+<div class="highlight"><pre>std::shared_ptr&lt;ob::Config&gt; config = std::make_shared&lt;ob::Config&gt;();
+config-&gt;enableStream(colorProfile);
+</pre></div>
+Start the stream configured in Config.
+<div class="highlight"><pre>pipe.start(config);
+</pre></div>
+To set the mirror mode, first determine whether the device has readable and writable permissions, and then set
+<div class="highlight"><pre><span class="c1">//Gets whether the image attribute has writable permission</span>
+<span class="k">if</span><span class="p">(</span><span class="n">pipe</span><span class="p">.</span><span class="n">getDevice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">isPropertySupported</span><span class="p">(</span><span class="n">OB_PROP_COLOR_MIRROR_BOOL</span><span class="p">,</span> <span class="n">OB_PERMISSION_WRITE</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">//Set mirror</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="n">getDevice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">setBoolProperty</span><span class="p">(</span><span class="n">OB_PROP_COLOR_MIRROR_BOOL</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+Waiting for a frame of data in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time.
+<div class="highlight"><pre>auto frameSet = pipe.waitForFrames(100);    //Set the waiting time to 100ms
+</pre></div>
+Stop Pipeline, no more frame data will be generated.
+<div class="highlight"><pre>pipe.stop();
+</pre></div>
+The final color map is shown below.<br /><img alt="3" src="/home/lisapeng/Documents/Orbbec%20SDK%201.3%20Documentation/3.%20Code%20sample%20Description/Sample%20Description%20%28C_C%2B%2B%29/Orbbec%20SDK%20Sample%20Description%20%28CC%2B%2B%29img/3.png" /><br />Resources will be automatically released after the program exits normally.</p>
+<h2 id="infraredviewer">InfraredViewer<a class="headerlink" href="#infraredviewer" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the use of SDK to obtain infrared data, set the resolution, display the infrared image, and exit through the ESC key.</p>
+<blockquote>
+<p>This example is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre>ob::Pipeline pipe;
+</pre></div>
+Get all stream profiles of the infrared camera, including stream resolution, frame rate, and frame format.
+<div class="highlight"><pre>// Set the item of interest through the interface and return the first profile in the corresponding profile list
+auto irProfile = profiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
+if(!irProfile) {
+    irProfile = profiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+By creating Config to configure which streams to be enabled or disabled by Pipeline, depth stream will be enabled here.
+<div class="highlight"><pre>std::shared_ptr&lt;ob::Config&gt; config = std::make_shared&lt;ob::Config&gt;();
+config-&gt;enableStream(irProfile);
+</pre></div>
+Start the stream configured in Config, if no parameters are set, the default configuration stream will be started.
+<div class="highlight"><pre>pipe.start(config);
+</pre></div>
+To set the mirror mode, first determine whether the device has readable and writable permissions, and then set
+<div class="highlight"><pre><span class="c1">//Gets whether the image attribute has writable permission</span>
+<span class="k">if</span><span class="p">(</span><span class="n">pipe</span><span class="p">.</span><span class="n">getDevice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">isPropertySupported</span><span class="p">(</span><span class="n">OB_PROP_COLOR_MIRROR_BOOL</span><span class="p">,</span> <span class="n">OB_PERMISSION_WRITE</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">//Set mirror</span>
+    <span class="n">pipe</span><span class="p">.</span><span class="n">getDevice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">setBoolProperty</span><span class="p">(</span><span class="n">OB_PROP_COLOR_MIRROR_BOOL</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+Waiting for a frame of data in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time..
+<div class="highlight"><pre>auto frameSet = pipe.waitForFrames(100);    //Set the waiting time to 100ms
+</pre></div>
+Stop Pipeline, no more frame data will be generated.
+<div class="highlight"><pre>pipe.stop();
+</pre></div>
+Resources will be automatically released after the program exits normally.</p>
+<h2 id="syncalignviewer">SyncAlignViewer<a class="headerlink" href="#syncalignviewer" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the operation of sensor data stream alignment.</p>
+<blockquote>
+<p>This example is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Pipeline. Through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre>ob::Pipeline pipe;
+</pre></div>
+Get all stream profiles of color camera and depth camera, including stream resolution, frame rate, and frame format.
+<div class="highlight"><pre>//Get all stream profiles of the color camera, including stream resolution, frame rate, and frame format.
+auto colorProfiles = pipe.getStreamProfiles(OB_SENSOR_COLOR);
+
+//Set the item of interest through the interface and return the first profile in the corresponding profile list
+auto colorProfile = colorProfiles-&gt;getVideoStreamProfile(colorWidth, colorHeight, OB_FORMAT_MJPG, 30);
+if(!colorProfile) {
+    colorProfile = colorProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+
+//Get all stream profiles of the depth camera, including stream resolution, frame rate, and frame format.
+auto depthProfiles = pipe.getStreamProfiles(OB_SENSOR_DEPTH);
+
+//Set the item of interest through the interface and return the first profile in the corresponding profile list
+auto depthProfile = depthProfiles-&gt;getVideoStreamProfile(depthWidth, depthHeight, OB_FORMAT_Y16, 30);
+if(!depthProfile) {
+    depthProfile = depthProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+By creating Config to configure which streams to enable or disable in Pipeline, color stream and depth stream will be enabled here.
+<div class="highlight"><pre>std::shared_ptr&lt;ob::Config&gt; config = std::make_shared&lt;ob::Config&gt;();
+config-&gt;enableStream(colorProfile);
+config-&gt;enableStream(depthProfile);
+</pre></div>
+Control stream alignment，software alignment is enabled here
+<div class="highlight"><pre>// Configure the alignment mode to software D2c alignment
+config-&gt;setAlignMode(ALIGN_D2C_SW_MODE);
+</pre></div>
+Start the stream configured in Config, if no parameters are set, the default configuration stream will be started.
+<div class="highlight"><pre>pipe.start(config);
+</pre></div>
+ Stop Pipeline, no more frame data will be generated.
+<div class="highlight"><pre>pipe.stop();
+</pre></div>
+Resources will be automatically released after the program exits normally.</p>
+<h2 id="sensorcontrol_1">SensorControl<a class="headerlink" href="#sensorcontrol_1" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the operation of device control commands, Sensor control commands, and the stream of Sensor.</p>
+<blockquote>
+<p>This example is based on C++ Low Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Context to obtain a list of device information and create a device.
+<div class="highlight"><pre>ob::Context ctx;
+</pre></div>
+Get device information list
+<div class="highlight"><pre>auto devList = ctx.queryDeviceList();
+</pre></div>
+Select a device to operate, if a single device is plugged in, it is selected and turned on by default.
+<div class="highlight"><pre>//Select a device to operate
+std::shared_ptr&lt;ob::Device&gt; device = nullptr;
+if(deviceList-&gt;deviceCount() &gt; 0) {
+    if(deviceList-&gt;deviceCount() &lt;= 1) {
+    //If you insert a single device, the first one is selected by default
+        device = deviceList-&gt;getDevice(0);
+    }
+    else {
+        device = selectDevice(deviceList);
+    }
+}
+</pre></div>
+Control command control, get the scope of the Property, set the property, get the property
+<div class="highlight"><pre>//Gets the scope of the property
+OBBoolPropertyRange  bool_range = device-&gt;getBoolPropertyRange(property_item.id)
+OBIntPropertyRange   int_range = device-&gt;getIntPropertyRange(property_item.id)
+OBFloatPropertyRange float_range = device-&gt;getFloatPropertyRange(property_item.id)
+
+//set a property
+device-&gt;setBoolProperty(propertyItem.id, bool_value);
+device-&gt;setIntProperty(propertyItem.id, int_value);
+device-&gt;setFloatProperty(propertyItem.id, float_value);
+
+//get a property
+bool bool_ret = device-&gt;getBoolProperty(propertyItem.id);
+int int_ret = device-&gt;getIntProperty(propertyItem.id);
+float float_ret = device-&gt;getFloatProperty(propertyItem.id);
+</pre></div>
+Resources will be automatically released after the program exits normally.</p>
+<h2 id="multidevice">MultiDevice<a class="headerlink" href="#multidevice" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the operation of multiple devices.</p>
+<blockquote>
+<p>This example is based on C++ Low Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Context to obtain a list of device information for creating devices and pipelines.
+<div class="highlight"><pre>ob::Context ctx;
+//Query the list of connected devices
+auto devList = ctx.queryDeviceList();
+//Get the number of access devices
+int devCount = devList-&gt;deviceCount();
+</pre></div>
+Create a device, and create a pipeline through the device.
+<div class="highlight"><pre>//Traverse the device list and create a device
+std::vector&lt;std::shared_ptr&lt;ob::Device&gt;&gt; devices;
+for (int i = 0; i &lt; devCount; i++)
+{
+    //Get device and create pipeline
+        auto dev  = devList-&gt;getDevice( i );
+        auto pipe = std::make_shared&lt; ob::Pipeline &gt;( dev );
+        pipes.push_back( pipe );
+}
+</pre></div>
+Start stream
+<div class="highlight"><pre>for ( auto&amp;&amp; pipe : pipes ) {
+        //Get depth camera profile list
+        auto depthProfileList = pipe-&gt;getStreamProfileList( OB_SENSOR_DEPTH );
+
+ //Set the item of interest through the interface and return the first profile in the corresponding profile list
+    auto depthProfile = depthProfileList-&gt;getVideoStreamProfile(640, 480, 
+OB_FORMAT_Y16)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+    if(!depthProfile) {
+        depthProfile = depthProfileList-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+    }
+    config-&gt;enableStream(depthProfile);
+
+ //Get color camera profile list
+ auto colorProfileList = pipe-&gt;getStreamProfileList( OB_SENSOR_COLOR );
+
+ //Set the item of interest through the interface and return the first profile in the corresponding profile list
+   auto colorProfile = colorProfileList-&gt;getVideoStreamProfile(640, 480,
+OB_FORMAT_MJPG)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+    if(!colorProfile) {
+       colorProfile = colorProfileList-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+    }
+    config-&gt;enableStream(colorProfile);
+
+ //Start the pipeline and pass in the configuration
+   pipe-&gt;start(config, [i](std::shared_ptr&lt;ob::FrameSet&gt; frameSet) {
+        std::lock_guard&lt;std::mutex&gt; lock(frameMutex);
+        if(frameSet-&gt;colorFrame() &amp;&amp; frameSet-&gt;depthFrame()) {
+            colorFrames[i] = frameSet-&gt;colorFrame();
+            depthFrames[i] = frameSet-&gt;depthFrame();
+        }
+    });
+    i++;
+}
+</pre></div>
+Stop stream
+<div class="highlight"><pre>void StopStream( std::vector&lt; std::shared_ptr&lt; ob::Pipeline &gt; &gt; pipes) {
+    int i = 0;
+    for ( auto&amp;&amp; pipe : pipes ) {
+        if(colorFrames[i])
+            colorFrames-&gt;reset();
+        if(depthFrames[i])
+            depthFrames-&gt;reset();
+        if(irFrames[i])
+            irFrames-&gt;reset();
+        //Stop pipeline
+        pipe-&gt;stop();
+        i++;
+    }
+}
+</pre></div>
+Resources will be automatically released after the program exits normally.</p>
+<h2 id="hotplugin_1">HotPlugin<a class="headerlink" href="#hotplugin_1" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the settings of the device plug-in callback, and processes the obtained stream after replug-in.</p>
+<blockquote>
+<p>This example is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>First, we need to create a Context to obtain a list of device information and create a device.
+<div class="highlight"><pre>ob::Context ctx;
+</pre></div>
+Register the device callback, and execute related functions when the device is plugged and unplugged.
+<div class="highlight"><pre>ctx.setDeviceChangedCallback( []( std::shared_ptr&lt; ob::DeviceList &gt; removedList, std::shared_ptr&lt; ob::DeviceList &gt; addedList ) {
+        DeviceDisconnectCallback( removedList );
+        DeviceConnectCallback( addedList );
+    } );
+</pre></div>
+Open stream according to the resolution and format configured in the configuration file.
+<div class="highlight"><pre>//Start the stream by the stream configuration of the configuration file, if there is no configuration file, the stream will be started with the 0th stream configuration
+try{
+  pipeline-&gt;start(nullptr);
+}catch(...){
+  std::cout&lt;&lt;&quot;Pipeline start failed!&quot;&lt;&lt;std::endl;
+}
+//Get all stream configurations of the depth camera, including stream resolution, frame rate, and frame format
+auto depthProfiles = pipeline-&gt;getStreamProfileList(OB_SENSOR_DEPTH);
+//Get the 0th Profile in the corresponding stream configuration list. If there is a configuration file, the stream configuration in the configuration file is the 0th in the stream configuration list.
+auto depthProfile = depthProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+//Get all stream configurations for color cameras, including stream resolution, frame rate, and frame format
+auto colorProfiles = pipeline-&gt;getStreamProfileList(OB_SENSOR_COLOR);
+//Get the 0th Profile in the corresponding stream configuration list. If there is a configuration file, the stream configuration in the configuration file is the 0th in the stream configuration list.
+auto colorProfile = colorProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+//get frame rate
+colorFps = colorProfile-&gt;fps();
+depthFps = depthProfile-&gt;fps();
+</pre></div>
+Waiting for a frame of data in a blocking manner. The frame is a composite frame, which contains the frame data of all streams enabled in the configuration. Set the frame timeout time.
+<div class="highlight"><pre>auto frameSet = pipe.waitForFrames(100);    //Set the waiting time to 100ms
+</pre></div>
+Stop Pipeline, will no longer generate frame data.
+<div class="highlight"><pre>pipe.stop();
+</pre></div>
+Resources will be automatically released after the program exits normally.</p>
+<h2 id="imureader">ImuReader<a class="headerlink" href="#imureader" title="Permanent link"></a></h2>
+<p>Function description: This example mainly demonstrates the use of SDK to obtain IMU data, and exit by ESC key.</p>
+<blockquote>
+<p>This example is based on C++ Low Level API for demonstration.</p>
+</blockquote>
+<p>Print the SDK version number. The SDK version number is divided into major version number, minor version number and revision number.
+<div class="highlight"><pre>//Print the SDK version number. The SDK version number is divided into major version number, minor version number and revision number.
+std::cout &lt;&lt; &quot;SDK version: &quot; &lt;&lt; ob::Version::getMajor() &lt;&lt; &quot;.&quot; &lt;&lt; ob::Version::getMinor() &lt;&lt; &quot;.&quot; &lt;&lt; ob::Version::getPatch() &lt;&lt; std::endl;
+</pre></div>
+First, we need to create a Context to obtain a list of device information and create a device.
+<div class="highlight"><pre>ob::Context ctx;
+</pre></div>
+Get the list of connected devices
+<div class="highlight"><pre>auto devList = ctx.queryDeviceList();
+
+//Get the number of connected devices.
+devList-&gt;deviceCount()
+</pre></div>
+Create device
+<div class="highlight"><pre>//Create a device, 0 means the index of the first device.
+auto dev = devList-&gt;getDevice(0);
+</pre></div>
+Get the gyroscope sensor and acceleration sensor
+<div class="highlight"><pre>auto gyroSensor = dev-&gt;getSensorList()-&gt;getSensor( OB_SENSOR_GYRO );
+
+auto accelSensor = dev-&gt;getSensorList()-&gt;getSensor( OB_SENSOR_ACCEL );
+</pre></div>
+Get the profile list of the gyroscope sensor and select the first profile to open stream, get the frame data in the open stream callback, the same as the acceleration sensor.
+<div class="highlight"><pre>auto profiles = gyroSensor-&gt;getStreamProfileList();
+auto profile = profiles-&gt;getProfile( 0 );
+gyroSensor-&gt;start( profile, []( std::shared_ptr&lt; ob::Frame &gt; frame ) {
+        auto timeStamp = frame-&gt;timeStamp();
+    auto gyroFrame = frame-&gt;as&lt; ob::GyroFrame &gt;();
+    if ( gyroFrame != nullptr &amp;&amp; ( timeStamp % 500 ) &lt; 2 ) {  //  ( timeStamp % 500 ) &lt; 2: 目的时减少打印频率
+            std::cout &lt;&lt; &quot;Gyro Frame: \n{\n&quot;;
+        std::cout &lt;&lt; &quot;  tsp = &quot; &lt;&lt; timeStamp &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;  temperature = &quot; &lt;&lt; gyroFrame-&gt;temperature() &lt;&lt; std::endl;
+        auto value = gyroFrame-&gt;value();
+        std::cout &lt;&lt; &quot;  gyro.x = &quot; &lt;&lt; value.x &lt;&lt; &quot; dps&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;  gyro.y = &quot; &lt;&lt; value.y &lt;&lt; &quot; dps&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;  gyro.z = &quot; &lt;&lt; value.z &lt;&lt; &quot; dps&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; &quot;}&quot; &lt;&lt; std::endl &lt;&lt; std::endl;
+    }
+ } );
+</pre></div>
+Stop stream
+<div class="highlight"><pre>gyroSensor-&gt;stop();
+accelSensor-&gt;stop();
+</pre></div>
+Resources will be automatically released after the program exits normally.</p>
+<h2 id="pointcloud_1">PointCloud<a class="headerlink" href="#pointcloud_1" title="Permanent link"></a></h2>
+<p>Function description: Connect the device to open the stream, generate a depth point cloud or RGBD point cloud and save it as a ply format file.</p>
+<blockquote>
+<p>This example is based on C++ High Level API for demonstration.</p>
+</blockquote>
+<p>Create a point cloud and save it as a ply format file function. The detailed description of the ply file format can be viewed on the Internet.<br />First, create two functions to save the point cloud data obtained from the stream. This is a function to save point cloud data.
+<div class="highlight"><pre>//Save point cloud data to ply
+void savePointsToPly(std::shared_ptr&lt;ob::Frame&gt; frame, std::string fileName) {
+    int   pointsSize = frame-&gt;dataSize() / sizeof(OBPoint);
+    FILE *fp         = fopen(fileName.c_str(), &quot;wb+&quot;);
+    fprintf(fp, &quot;ply\n&quot;);
+    fprintf(fp, &quot;format ascii 1.0\n&quot;);
+    fprintf(fp, &quot;element vertex %d\n&quot;, pointsSize);
+    fprintf(fp, &quot;property float x\n&quot;);
+    fprintf(fp, &quot;property float y\n&quot;);
+    fprintf(fp, &quot;property float z\n&quot;);
+    fprintf(fp, &quot;end_header\n&quot;);
+
+    OBPoint *point = (OBPoint *)frame-&gt;data();
+    for(int i = 0; i &lt; pointsSize; i++) {
+        fprintf(fp, &quot;%.3f %.3f %.3f\n&quot;, point-&gt;x, point-&gt;y, point-&gt;z);
+        point++;
+    }
+
+    fflush(fp);
+    fclose(fp);
+}
+</pre></div>
+Create another function to save the color point cloud data.
+<div class="highlight"><pre>//Save color point cloud data to ply
+void saveRGBPointsToPly(std::shared_ptr&lt;ob::Frame&gt; frame, std::string fileName) {
+    int   pointsSize = frame-&gt;dataSize() / sizeof(OBColorPoint);
+    FILE *fp         = fopen(fileName.c_str(), &quot;wb+&quot;);
+    fprintf(fp, &quot;ply\n&quot;);
+    fprintf(fp, &quot;format ascii 1.0\n&quot;);
+    fprintf(fp, &quot;element vertex %d\n&quot;, pointsSize);
+    fprintf(fp, &quot;property float x\n&quot;);
+    fprintf(fp, &quot;property float y\n&quot;);
+    fprintf(fp, &quot;property float z\n&quot;);
+    fprintf(fp, &quot;property uchar red\n&quot;);
+    fprintf(fp, &quot;property uchar green\n&quot;);
+    fprintf(fp, &quot;property uchar blue\n&quot;);
+    fprintf(fp, &quot;end_header\n&quot;);
+
+    OBColorPoint *point = (OBColorPoint *)frame-&gt;data();
+    for(int i = 0; i &lt; pointsSize; i++) {
+        fprintf(fp, &quot;%.3f %.3f %.3f %d %d %d\n&quot;, point-&gt;x, point-&gt;y, point-&gt;z, (int)point-&gt;r, (int)point-&gt;g, (int)point-&gt;b);
+        point++;
+    }
+
+    fflush(fp);
+    fclose(fp);
+}
+</pre></div>
+Set the Log level to avoid too many Logs of Info level affecting the output of the point cloud
+<div class="highlight"><pre><span class="n">ob</span><span class="o">::</span><span class="n">Context</span><span class="o">::</span><span class="n">setLoggerSeverity</span><span class="p">(</span><span class="n">OB_LOG_SEVERITY_ERROR</span><span class="p">);</span>
+</pre></div>
+Create a Pipeline, through pipeline, you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre> ob::Pipeline pipeline;
+</pre></div>
+Then we can get all the profile of the color stream through the Pipeline, including the resolution of the stream, the frame rate, and the format of the stream.
+<div class="highlight"><pre>auto colorProfiles = pipeline.getStreamProfileList( OB_SENSOR_COLOR );
+</pre></div>
+Then select the profile of the stream we need through the profile list of the color stream obtained above.
+<div class="highlight"><pre>//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
+auto colorProfile = colorProfiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_YUYV);
+if(!colorProfile) {
+  colorProfile = colorProfiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_I420);
+  if(!colorProfile)
+      colorProfile = colorProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+According to the method of setting the profile of the color stream above, set the profile of the depth stream in the same way.
+<div class="highlight"><pre>//Get all stream configurations of the depth camera, including stream resolution, frame rate, and frame format
+auto depthProfiles = pipeline.getStreamProfileList(OB_SENSOR_DEPTH);
+//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
+auto depthProfile = depthProfiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_Y16);
+if(!depthProfile) {
+    depthProfile = depthProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+By creating Config to configure which streams to be enabled or disabled in Pipeline, color stream and depth stream will be enabled here.
+<div class="highlight"><pre>  std::shared_ptr&lt; ob::Config &gt; config = std::make_shared&lt; ob::Config &gt;();
+  config-&gt;enableStream( colorProfile );
+  config-&gt;enableStream( depthProfile );
+</pre></div>
+D2C alignment need to be turned on when generating RGBD point cloud
+<div class="highlight"><pre>//Enable D2C alignment, which needs to be enabled when generating RGBD point clouds
+config-&gt;setAlignMode(ALIGN_D2C_HW_MODE);
+</pre></div>
+Create a point cloud Filter object and set camera internal parameters
+<div class="highlight"><pre>// Create a point cloud Filter object (when the point cloud Filter is created, the device parameters will be obtained inside the Pipeline, so try to configure the device before the Filter is created)
+ob::PointCloudFilter pointCloud;
+
+//Get the camera internal parameters and pass them into the point cloud Filter
+auto cameraParam = pipeline.getCameraParam();
+pointCloud.setCameraParam(cameraParam);
+</pre></div>
+Start Pipeline
+<div class="highlight"><pre>pipeline.start( config );
+</pre></div>
+Set up some operation tips
+<div class="highlight"><pre> std::cout &lt;&lt; &quot;Press R to create rgbd pointCloud and save to ply file! &quot; &lt;&lt; std::endl;
+ std::cout &lt;&lt; &quot;Press d to create depth pointCloud and save to ply file! &quot; &lt;&lt; std::endl;
+ std::cout &lt;&lt; &quot;Press ESC to exit! &quot; &lt;&lt; std::endl;
+</pre></div>
+Set the main process to obtain and save point cloud data through the point cloud Filter object created above.
+<div class="highlight"><pre>if(key == &#39;R&#39; || key == &#39;r&#39;) {
+  count = 0;
+  //Limit up to 10 repetitions
+  while(count++ &lt; 10) {
+    //Waiting for a frame of data, the timeout is 100ms
+    auto frameset = pipeline.waitForFrames(100);
+    if(frameset != nullptr &amp;&amp; frameset-&gt;depthFrame() != nullptr &amp;&amp; frameset-&gt;colorFrame() != nullptr) {
+      try {
+        //Generate color point cloud and save
+        std::cout &lt;&lt; &quot;Save RGBD PointCloud ply file...&quot; &lt;&lt; std::endl;
+        pointCloud.setCreatePointFormat(OB_FORMAT_RGB_POINT);
+        std::shared_ptr&lt;ob::Frame&gt; frame = pointCloud.process(frameset);
+        saveRGBPointsToPly(frame, &quot;RGBPoints.ply&quot;);
+        std::cout &lt;&lt; &quot;RGBPoints.ply Saved&quot; &lt;&lt; std::endl;
+      }
+      catch(std::exception &amp;e) {
+        std::cout &lt;&lt; &quot;Get point cloud failed&quot; &lt;&lt; std::endl;
+      }
+      break;
+    }
+  }
+}
+else if(key == &#39;D&#39; || key == &#39;d&#39;) {
+  count = 0;
+  //Limit up to 10 repetitions
+  while(count++ &lt; 10) {
+    //Waiting for a frame of data, the timeout is 100ms
+    auto frameset = pipeline.waitForFrames(100);
+    if(frameset != nullptr &amp;&amp; frameset-&gt;depthFrame() != nullptr) {
+      try {
+        //Generate point cloud and save
+        std::cout &lt;&lt; &quot;Save Depth PointCloud to ply file...&quot; &lt;&lt; std::endl;
+        pointCloud.setCreatePointFormat(OB_FORMAT_POINT);
+        std::shared_ptr&lt;ob::Frame&gt; frame = pointCloud.process(frameset);
+        savePointsToPly(frame, &quot;DepthPoints.ply&quot;);
+        std::cout &lt;&lt; &quot;DepthPoints.ply Saved&quot; &lt;&lt; std::endl;
+      }
+      catch(std::exception &amp;e) {
+        std::cout &lt;&lt; &quot;Get point cloud failed&quot; &lt;&lt; std::endl;
+      }
+      break;
+    }
+  }
+}
+</pre></div>
+Finally, stop the stream through the Pipeline.
+<div class="highlight"><pre>pipeline.stop();
+</pre></div>
+Resources will be released after the program exits normally.</p>
+<h2 id="savetodisk">SaveToDisk<a class="headerlink" href="#savetodisk" title="Permanent link"></a></h2>
+<p>Function description: Connect the device to open the stream, get the color and depth map and save as png format.</p>
+<blockquote>
+<p>This example is based on C++ high Level API for demonstration.</p>
+</blockquote>
+<p>Create two functions to save the acquired picture to a file.
+<div class="highlight"><pre>//Save the depth image in png format.
+void saveDepth( std::shared_ptr&lt; ob::DepthFrame &gt; depthFrame ) {
+    std::vector&lt; int &gt; compression_params;
+    compression_params.push_back( cv::IMWRITE_PNG_COMPRESSION );
+    compression_params.push_back( 0 );
+    compression_params.push_back( cv::IMWRITE_PNG_STRATEGY );
+    compression_params.push_back( cv::IMWRITE_PNG_STRATEGY_DEFAULT );
+    std::string depthName = &quot;Depth_&quot; + std::to_string( depthFrame-&gt;timeStamp() ) + &quot;.png&quot;;
+    cv::Mat     depthMat( depthFrame-&gt;height(), depthFrame-&gt;width(), CV_16UC1, depthFrame-&gt;data() );
+    cv::imwrite( depthName, depthMat, compression_params );
+    std::cout &lt;&lt; &quot;Depth saved:&quot; &lt;&lt; depthName &lt;&lt; std::endl;
+}
+
+//Save the color image in png format.
+void saveColor( std::shared_ptr&lt; ob::ColorFrame &gt; colorFrame ) {
+    std::vector&lt; int &gt; compression_params;
+    compression_params.push_back( cv::IMWRITE_PNG_COMPRESSION );
+    compression_params.push_back( 0 );
+    compression_params.push_back( cv::IMWRITE_PNG_STRATEGY );
+    compression_params.push_back( cv::IMWRITE_PNG_STRATEGY_DEFAULT );
+    std::string colorName = &quot;Color_&quot; + std::to_string( colorFrame-&gt;timeStamp() ) + &quot;.png&quot;;
+    cv::Mat     colorRawMat( 1, colorFrame-&gt;dataSize(), CV_8UC1, colorFrame-&gt;data() );
+    cv::Mat     colorMat = cv::imdecode( colorRawMat, 1 );
+    cv::imwrite( colorName, colorMat, compression_params );
+    std::cout &lt;&lt; &quot;Color saved:&quot; &lt;&lt; colorName &lt;&lt; std::endl;
+}
+</pre></div>
+Create a Pipeline, through Pipelie, you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre>ob::Pipeline pipeline;
+</pre></div>
+Then we can get all the profile of the color stream through the Pipeline, including the resolution of the stream, the frame rate, and the format of the stream.
+<div class="highlight"><pre>auto colorProfiles = pipeline.getStreamProfileList( OB_SENSOR_COLOR );
+</pre></div>
+Then select the profile of the stream, we need to get the profile list of the color stream obtained above.
+<div class="highlight"><pre>//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list
+auto colorProfile = colorProfiles-&gt;getVideoStreamProfile(640, 480, OB_FORMAT_MJPG, 30);
+if(!colorProfile){
+  colorProfile = colorProfiles-&gt;getProfile(0)-&gt;as&lt;ob::VideoStreamProfile&gt;();
+}
+</pre></div>
+Configure the depth stream in the same way as getting the color stream configuration
+<div class="highlight"><pre><span class="c1">//Get all stream configurations of the depth camera, including stream resolution, frame rate, and frame format</span>
+<span class="k">auto</span> <span class="n">depthProfiles</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">getStreamProfileList</span><span class="p">(</span><span class="n">OB_SENSOR_DEPTH</span><span class="p">);</span>
+
+<span class="c1">//Set the item of interest through the interface, and return the first Profile corresponding to the Profile list</span>
+<span class="k">auto</span> <span class="n">depthProfile</span> <span class="o">=</span> <span class="n">depthProfiles</span><span class="o">-&gt;</span><span class="n">getVideoStreamProfile</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">OB_FORMAT_Y16</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">depthProfile</span><span class="p">){</span>
+    <span class="n">depthProfile</span> <span class="o">=</span> <span class="n">depthProfiles</span><span class="o">-&gt;</span><span class="n">getProfile</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">as</span><span class="o">&lt;</span><span class="n">ob</span><span class="o">::</span><span class="n">VideoStreamProfile</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+Configure the stream we want to open by creating Config.
+<div class="highlight"><pre>std::shared_ptr&lt; ob::Config &gt; config = std::make_shared&lt; ob::Config &gt;();
+    config-&gt;enableStream( colorProfile );
+    config-&gt;enableStream( depthProfile )
+</pre></div>
+Start stream
+<div class="highlight"><pre>pipeline.start( config );
+</pre></div>
+Obtain frame data by waiting
+<div class="highlight"><pre> auto frameset = pipeline.waitForFrames( 100 );
+</pre></div>
+Get the data of a single type of frame
+<div class="highlight"><pre>auto colorFrame = frameset-&gt;colorFrame();
+auto depthFrame = frameset-&gt;depthFrame();
+</pre></div>
+Create a format conversion Filter to convert the color image to RGB format and save it
+<div class="highlight"><pre><span class="c1">//Create Format Conversion Filter</span>
+<span class="n">ob</span><span class="o">::</span><span class="n">FormatConvertFilter</span> <span class="n">formatConverFilter</span><span class="p">;</span>
+
+<span class="n">formatConverFilter</span><span class="p">.</span><span class="n">setFormatConvertType</span><span class="p">(</span><span class="n">FORMAT_MJPEG_TO_RGB888</span><span class="p">);</span>
+<span class="n">colorFrame</span> <span class="o">=</span> <span class="n">formatConverFilter</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">colorFrame</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">as</span><span class="o">&lt;</span><span class="n">ob</span><span class="o">::</span><span class="n">ColorFrame</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">formatConverFilter</span><span class="p">.</span><span class="n">setFormatConvertType</span><span class="p">(</span><span class="n">FORMAT_RGB888_TO_BGR</span><span class="p">);</span>
+<span class="n">colorFrame</span> <span class="o">=</span> <span class="n">formatConverFilter</span><span class="p">.</span><span class="n">process</span><span class="p">(</span><span class="n">colorFrame</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">as</span><span class="o">&lt;</span><span class="n">ob</span><span class="o">::</span><span class="n">ColorFrame</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+Store the data through the edited storage function above
+<div class="highlight"><pre>saveColor( colorFrame );
+saveDepth( depthFrame );
+</pre></div>
+Stop Pipeline
+<div class="highlight"><pre>pipeline.stop();
+</pre></div>
+Resources will be released after the program exits normally.</p>
+<h2 id="recorder">Recorder<a class="headerlink" href="#recorder" title="Permanent link"></a></h2>
+<p>Function description: Connect the device to open the stream, and record the current video stream to a file.</p>
+<blockquote>
+<p>This example is based on C++ high Level API for demonstration.</p>
+</blockquote>
+<p>First, you need to create a Pipeline, through which you can easily open and close multiple types of streams and obtain a set of frame data.
+<div class="highlight"><pre><span class="n">ob</span><span class="o">::</span><span class="n">Pipeline</span> <span class="n">pipe</span><span class="p">;</span>
+</pre></div>
+Obtain the stream configuration of the depth camera through the input resolution, format, frame rate and other interesting items.
+<div class="highlight"><pre><span class="c1">//Get depth stream configuration</span>
+<span class="k">auto</span> <span class="n">profiles</span>     <span class="o">=</span> <span class="n">pipe</span><span class="p">.</span><span class="n">getStreamProfileList</span><span class="p">(</span><span class="n">OB_SENSOR_DEPTH</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">depthProfile</span> <span class="o">=</span> <span class="n">profiles</span><span class="o">-&gt;</span><span class="n">getVideoStreamProfile</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="n">OB_FORMAT_Y16</span><span class="p">);</span>
+</pre></div>
+Configure which streams the Pipeline wants to enable or disable by creating a Config, where the depth stream will be enabled
+<div class="highlight"><pre><span class="c1">//Configure the type of stream opened by Pipeline</span>
+<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ob</span><span class="o">::</span><span class="n">Config</span><span class="o">&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ob</span><span class="o">::</span><span class="n">Config</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">config</span><span class="o">-&gt;</span><span class="n">enableStream</span><span class="p">(</span><span class="n">depthProfile</span><span class="p">);</span>
+</pre></div>
+Start the stream configured in Config. If no parameters are passed, the default configuration startup stream will be started, and the recording switch will be enabled.
+<div class="highlight"><pre><span class="n">pipe</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+<span class="n">pipe</span><span class="p">.</span><span class="n">startRecord</span><span class="p">(</span><span class="s">&quot;./OrbbecPipeline.bag&quot;</span><span class="p">);</span>
+</pre></div>
+Wait for a frame of data in a blocking manner, which is a composite frame, which contains frame data of all streams enabled in the configuration, and sets the frame&rsquo;s waiting timeout time.
+<div class="highlight"><pre>auto frameSet = pipe.waitForFrames(100);    //Set the wait time to 100ms
+</pre></div>
+Stop Pipeline
+<div class="highlight"><pre><span class="n">pipe</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+</pre></div>
+Resources will be released after the program exits normally.</p>
+<h2 id="playback">Playback<a class="headerlink" href="#playback" title="Permanent link"></a></h2>
+<p>Function description: Connect the device to open the stream, and load the video file for playback.</p>
+<blockquote>
+<p>This example is based on C++ high Level API for demonstration.</p>
+</blockquote>
+<p><div class="highlight"><pre><span class="c1">//Create a pipeline object for playback</span>
+<span class="n">ob</span><span class="o">::</span><span class="n">Pipeline</span> <span class="n">pipe</span><span class="p">(</span><span class="s">&quot;./OrbbecPipeline.bag&quot;</span><span class="p">);</span>
+</pre></div>
+Get the playback status callback of the playback object
+<div class="highlight"><pre><span class="c1">//Get playback object set playback status callback</span>
+<span class="k">auto</span> <span class="n">playback</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">.</span><span class="n">getPlayback</span><span class="p">();</span>
+<span class="n">playback</span><span class="o">-&gt;</span><span class="n">setPlaybackStateCallback</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">OBMediaState</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">OB_MEDIA_BEGIN</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Playback file begin.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">OB_MEDIA_END</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Playback file end.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+Read device information and internal parameter information from playback files
+<div class="highlight"><pre><span class="c1">//Read device information from playback file</span>
+<span class="k">auto</span> <span class="n">deviceInfo</span> <span class="o">=</span> <span class="n">playback</span><span class="o">-&gt;</span><span class="n">getDeviceInfo</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;======================DeviceInfo: name : &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceInfo</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; sn: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceInfo</span><span class="o">-&gt;</span><span class="n">serialNumber</span><span class="p">()</span>
+  <span class="o">&lt;&lt;</span> <span class="s">&quot; firmware: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceInfo</span><span class="o">-&gt;</span><span class="n">firmwareVersion</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; vid: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceInfo</span><span class="o">-&gt;</span><span class="n">vid</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; pid: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">deviceInfo</span><span class="o">-&gt;</span><span class="n">pid</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="c1">//Read internal parameter information from playback file</span>
+<span class="k">auto</span> <span class="n">cameraParam</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">.</span><span class="n">getCameraParam</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;======================Camera params : rgb width:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cameraParam</span><span class="p">.</span><span class="n">rgbIntrinsic</span><span class="p">.</span><span class="n">width</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; rgb height: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cameraParam</span><span class="p">.</span><span class="n">rgbIntrinsic</span><span class="p">.</span><span class="n">height</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot; depth width: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cameraParam</span><span class="p">.</span><span class="n">depthIntrinsic</span><span class="p">.</span><span class="n">width</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; depth height: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cameraParam</span><span class="p">.</span><span class="n">rgbIntrinsic</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+Start playback
+<div class="highlight"><pre><span class="c1">//Start playback</span>
+<span class="n">pipe</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</pre></div>
+Wait for a frame of data in a blocking manner, which is a composite frame, which contains frame data of all streams enabled in the configuration, and sets the frame&rsquo;s waiting timeout time.
+<div class="highlight"><pre>auto frameSet = pipe.waitForFrames(100);    //Set the wait time to 100ms
+</pre></div>
+Stop Pipeline
+<div class="highlight"><pre><span class="n">pipe</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+</pre></div>
+Resources will be released after the program exits normally.</p></article></body></html>
